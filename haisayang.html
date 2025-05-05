@@ -1,0 +1,93 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>buat nabila sayang</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-image: url('background.jpg'); /* background.jpg */
+      background-size: background;
+      background-position: center;
+      font-family: monospace;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      color: #ffddf4;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff8cd1;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      white-space: pre-wrap;
+      font-size: 20px;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="overlay">
+    <h1>hai sayang</h1><p>ini longtext khusus buat wanita hebat kesayanganku yaitu kamu nabila salma fauziyah...</p>
+
+    <button onclick="ucapan()">klik aku</button>
+    <div id="output"></div>
+
+    <audio id="ketik-sound"src="typing.mp3" preload="auto">typing.mp3</audio>
+  </div>
+
+  <script>
+    function ucapan() {
+      var text = "nabila sayang, aku benaran sayang dan cinta sama kamu. aku janji akan selalu setia, menjaga hati ini hanya untuk kamu, dan nda akan pernah ninggalin kamu apapun yang terjadi. kamu bukan cuma bagian dari hariku, tapi juga masa depanku. aku ingin kita terus bareng-bareng, saling jaga, saling dukung, dan saling percaya selamanya. makasi uda bertahan selama ini.....";
+      var i = 0;
+      var speed = 50;
+      var output = document.getElementById("output");
+      var sound = document.getElementById("ketik-sound");
+
+      output.innerHTML = "";
+
+      function ketik() {
+        if (i < text.length) {
+          output.innerHTML += text.charAt(i);
+          sound.currentTime = 5;
+          sound.play();
+          i++;
+          setTimeout(ketik, speed);
+        }
+      }
+
+      ketik();
+    }
+  </script>
+
+</body>
+</html>
